@@ -1,4 +1,4 @@
-import { AbsoluteFill, OffthreadVideo, Sequence } from 'remotion';
+import { AbsoluteFill,  } from 'remotion';
 import { createClient } from 'pexels';
 import { useEffect, useState } from 'react';
 import { VideosInSequence } from './videosInSequence';
@@ -302,9 +302,7 @@ export const TimelineVideo: React.FC = () => {
                 durationInFrames: Math.floor(duration * fps),
               });
             }
-         
       }
-
       setVideos(allVideos);
       setLoading(false);
     };
@@ -323,25 +321,6 @@ export const TimelineVideo: React.FC = () => {
   return (
     <AbsoluteFill>
         <VideosInSequence videos={videos}/>
-      {/* {videos.map((video, index) => (
-        <Sequence
-          key={`${video.section}-${video.query}-${index}`}
-          from={video.startFrame}
-          durationInFrames={video.durationInFrames}
-        >
-          <OffthreadVideo
-            src={video.videoUrl}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              zIndex: index,
-              position: 'absolute',
-            }}
-            muted
-          />
-        </Sequence>
-      ))} */}
     </AbsoluteFill>
   );
 };

@@ -2,6 +2,7 @@ import "./index.css";
 import { Composition } from "remotion";
 import {  myCompSchema } from "./HelloWorld";
 import TimelineVideo from "./ScriptTimeline";
+import { VoiceOverTimeline } from "./viceOvertimeline";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -13,7 +14,14 @@ export const RemotionRoot: React.FC = () => {
         // npx remotion render HelloWorld
        
         id="timeline-video"
-  component={TimelineVideo}
+  component={()=>(
+   <>
+   < TimelineVideo/>
+    <VoiceOverTimeline/>
+   </>
+
+  )
+}
   durationInFrames={420 * 30} // 420 seconds total
   fps={30}
 
